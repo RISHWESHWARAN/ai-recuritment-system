@@ -53,11 +53,11 @@ def evaluate_resume_temp(
 
     score = calculate_similarity(resume.content, data.description)
 
-    feedback = generate_feedback(resume.content, data.description, score)
+
 
     return {
-        "similarity_score": score,
-        "feedback": feedback
+        "similarity_score": score
+
     }
 
 @router.get("/rejection/{application_id}")

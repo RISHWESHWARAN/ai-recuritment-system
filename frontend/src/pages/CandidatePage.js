@@ -15,16 +15,17 @@ export default function CandidatePage() {
 
   return (
     <div style={styles.container}>
-      <h2>Candidate Dashboard</h2>
+      <h2 style={{ marginBottom: "30px" }}>Candidate Dashboard</h2>
       
       <div style={styles.buttonGroup}>
-        <button style={styles.button} onClick={() => navigate("/jobs")}>
+        <button style={styles.button3D} onClick={() => navigate("/jobs")}>
           Explore Jobs
         </button>
-        <button style={styles.button} onClick={() => navigate("/upload-resume")}>
+        <button style={styles.button3D} onClick={() => navigate("/upload-resume")}>
           Upload Resume
         </button>
-        <button onClick={() => navigate("/evaluate")}>
+        {/* 🔥 Updated Evaluate Button */}
+        <button style={styles.button3D} onClick={() => navigate("/evaluate")}>
           Evaluate Resume
         </button>
       </div>
@@ -39,31 +40,39 @@ export default function CandidatePage() {
 const styles = {
   container: {
     textAlign: "center", 
-    marginTop: "100px" 
+    marginTop: "100px",
+    fontFamily: "Arial, sans-serif"
   },
   buttonGroup: {
     display: "flex",
     justifyContent: "center",
-    gap: "15px",
-    margin: "20px 0"
+    gap: "20px",
+    margin: "20px 0",
+    flexWrap: "wrap" // Ensures it looks good on smaller screens
   },
-  button: {
-    padding: "10px 20px",
+  // The Black 3D Style
+  button3D: {
+    padding: "12px 24px",
     background: "#000",
     color: "#fff",
     borderRadius: "12px",
     border: "none",
     cursor: "pointer",
     fontSize: "16px",
+    fontWeight: "bold",
+    boxShadow: "0 4px 0 #444", // The 3D effect
+    transition: "transform 0.1s, box-shadow 0.1s",
   },
   logoutButton: {
     padding: "10px 20px",
-    background: "#dc3545", // Red color to indicate logout
+    background: "#dc3545", 
     color: "#fff",
     borderRadius: "12px",
     border: "none",
     cursor: "pointer",
-    fontSize: "16px",
-    marginTop: "40px",
+    fontSize: "14px",
+    marginTop: "60px",
+    fontWeight: "bold",
+    opacity: 0.9
   }
 };
